@@ -1,4 +1,4 @@
-import { FaPepperHot as icon } from 'react-icons/fa';
+import { FaPepperHot as pepper } from 'react-icons/fa';
 import { MdCheckBox } from 'react-icons/md';
 
 export default {
@@ -7,7 +7,7 @@ export default {
   // visibile title
   title: 'Toppings',
   type: 'document',
-  icon,
+  icon: pepper,
   fields: [
     {
       name: 'name',
@@ -31,7 +31,7 @@ export default {
       vegetarian: 'vegetarian',
     },
     prepare: ({ name, vegetarian }) => ({
-      title: `${name} ${vegetarian ? '' : ''}`,
+      title: `${name} ${vegetarian ? '🌱' : ''}`,
     }),
   },
 };
