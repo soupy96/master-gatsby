@@ -1,10 +1,19 @@
 import React from 'react';
 import { Link } from 'gatsby';
+import styled from 'styled-components';
+
+const NavStyles = styled.nav`
+  background: green;
+`;
+
+const UlStyles = styled.ul`
+  border 1px solid yellow;
+`;
 
 export default function Nav() {
   return (
-    <nav>
-      <ul>
+    <NavStyles>
+      <UlStyles>
         <li>
           <Link to="/">Hot Now</Link>
         </li>
@@ -20,7 +29,7 @@ export default function Nav() {
         <li>
           <Link to="/order">Order Ahead!</Link>
         </li>
-      </ul>
-    </nav>
+      </UlStyles>
+    </NavStyles>
   );
 }
