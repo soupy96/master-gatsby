@@ -41,7 +41,13 @@ function wait(ms = 0) {
 
 exports.handler = async (event, context) => {
   const body = JSON.parse(event.body);
-  console.log(body);
+  // check if they have filled out the honey pot
+  if (body.maplesyrup) {
+    return {
+      statusCode: 400,
+      body: JSON.stringify({ message: 'Boop beep bop zzzzstt good bye' }),
+    };
+  }
   // validate the data coming in is correct
   const requiredFields = ['email', 'name', 'order'];
   for (const field of requiredFields) {
