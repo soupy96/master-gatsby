@@ -57,19 +57,21 @@ export default function OrderPage({ data }) {
               <div>
                 <h2>{pizza.name}</h2>
               </div>
-              {['S', 'M', 'L'].map((size) => (
-                <button
-                  type="button"
-                  onClick={() =>
-                    addToOrder({
-                      id: pizza.id,
-                      size,
-                    })
-                  }
-                >
-                  {size} {formatMoney(calculatePizzaPrice(pizza.price, size))}
-                </button>
-              ))}
+              <div>
+                {['S', 'M', 'L'].map((size) => (
+                  <button
+                    type="button"
+                    onClick={() =>
+                      addToOrder({
+                        id: pizza.id,
+                        size,
+                      })
+                    }
+                  >
+                    {size} {formatMoney(calculatePizzaPrice(pizza.price, size))}
+                  </button>
+                ))}
+              </div>
             </MenuItemStyles>
           ))}
         </fieldset>
